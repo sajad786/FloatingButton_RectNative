@@ -44,12 +44,20 @@ console.log(NativeModules,"NativeModulesNativeModulesNativeModules");
 
   
 
-  const showFloatingView = () =>{
-    PopupModule.showPopup();
-  }
+  const showFloatingView = () => {
+    const data = {
+      deliveryTag: 'Delivery',
+      deliveryFee: '$5',
+      pickupLocation: '14a Mercer St, Geelong VIC, Australia',
+      dropoffLocation: '10b Queen St, Geelong VIC, Australia',
+      estimatedTime: '5 min (1.75km)',
+    };
+  
+    PopupModule.showPopup(data); // Pass data to the native module
+  };
 
   const hideFloatingView = () => {
-    Alert.alert('hidinggggg')
+    PopupModule.hidePopup(); 
   }
 
   return (
